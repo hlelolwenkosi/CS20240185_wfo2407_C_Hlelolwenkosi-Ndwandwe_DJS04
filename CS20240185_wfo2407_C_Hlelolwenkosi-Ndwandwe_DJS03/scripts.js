@@ -2,7 +2,7 @@
 import { books, authors, genres, BOOKS_PER_PAGE } from "./data.js";
 
 // Utility function to create and return an HTML element with specified attributes and content
-export const createElement = (tag, attributes, innerHTML) => {
+const createElement = (tag, attributes, innerHTML) => {
   const element = document.createElement(tag); // Instantiate a new HTML element of the given tag type
   // Loop through the attributes and set them on the element
   Object.entries(attributes).forEach(([key, value]) =>
@@ -13,7 +13,7 @@ export const createElement = (tag, attributes, innerHTML) => {
 };
 
 // Function to dynamically populate dropdown menus with options from a given data set
-export const renderOptions = (data, selector, defaultValue) => {
+const renderOptions = (data, selector, defaultValue) => {
   const fragment = document.createDocumentFragment(); // Create a lightweight document fragment for performance
   // Add a default option to the dropdown
   fragment.appendChild(
@@ -27,7 +27,7 @@ export const renderOptions = (data, selector, defaultValue) => {
 };
 
 // Function to display book previews based on search results
- export const renderBooks = (matches, limit) => {
+const renderBooks = (matches, limit) => {
   const fragment = document.createDocumentFragment(); // Create a fragment to hold multiple book preview elements
   // Generate a preview button for each book that matches the search criteria
   matches.slice(0, limit).forEach(({ author, id, image, title }) => {
